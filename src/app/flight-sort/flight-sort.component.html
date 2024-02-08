@@ -1,0 +1,23 @@
+<div class="heading">
+    <div routerLink="/flight-results"><i class="material-icons">arrow_back</i></div>
+    <div>
+        <div class="font15 text-center">
+        Sort By
+        </div>
+    </div>
+    <div></div> 
+</div>
+
+<div class="sort-options">
+    <div> <input type="radio" [(ngModel)]="sortingType" value="lowest"> Price (Lowest to Highest)</div>
+    <div> <input type="radio" [(ngModel)]="sortingType" value="highest"> Price (Highest to Lowest)</div>
+    <div> <input type="radio" [(ngModel)]="sortingType" value="shortest"> Duration (Shortest to Longest)</div>
+    <div> <input type="radio" [(ngModel)]="sortingType" value="longest"> Duration (Longest to Shortest)</div>
+    <div> <input type="radio" [(ngModel)]="sortingType" value="departure"> Departure (Earliest to Latest)</div>
+    <div> <input type="radio" [(ngModel)]="sortingType" value="arrival"> Arrival (Earliest to Latest)</div>
+    <div> <input type="radio" [(ngModel)]="sortingType" value="ascAirlines"> Airlines (A to Z)</div>
+    <div> <input type="radio" [(ngModel)]="sortingType" value="dscAirlines"> Airlines (Z to A)</div>
+</div>
+
+<button class="button" (click)="sort()">Done</button>
+

@@ -1,0 +1,31 @@
+[{
+    "airline": "Indigo",
+    "depatureTime": 1707202404504,
+    "returnTime": 1707216382064,
+    "fare": {
+      "basic": 125,
+      "main": 212,
+      "business": 400
+    }
+  },
+  {
+    "airline": "British Airways",
+    "depatureTime": 1707205284504,
+    "returnTime": 1707213562064,
+    "fare": {
+      "basic": 128,
+      "main": 230,
+      "business": 420
+    }
+  },
+  {
+    "airline": "Jet Airways",
+    "depatureTime": 1707202404504,
+    "returnTime": 1707213562064,
+    "fare": {
+      "basic": 110,
+      "main": 190,
+      "business": 320
+    }
+  }
+]

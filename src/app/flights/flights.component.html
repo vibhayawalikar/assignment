@@ -1,0 +1,84 @@
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+    <div class="search-form">
+        <div>
+            <label class="label">
+                Departure
+            </label>
+            <select class="form-control full-width" formControlName="departure">
+                <option *ngFor="let city of cities" [ngValue]="city">{{city}}</option>
+            </select>
+            <div class="validation-error" *ngIf="searchForm.controls.departure.invalid && (searchForm.controls.departure.dirty || searchForm.controls.departure.touched)">
+                <div *ngIf="searchForm.controls.departure.errors?.['required']">
+                    This field is required
+                </div>
+            </div>
+        </div>
+        <div>
+            <label class="label">
+                Destination
+            </label>
+            <select class="form-control full-width" formControlName="destination">
+                <option *ngFor="let city of cities" [ngValue]="city">{{city}}</option>
+            </select>
+            <div class="validation-error" *ngIf="searchForm.controls.destination.invalid && (searchForm.controls.destination.dirty || searchForm.controls.destination.touched)">
+                <div *ngIf="searchForm.controls.departure.errors?.['required']">
+                    This field is required
+                </div>
+            </div>
+        </div>
+        <div class="validation-error" *ngIf="searchForm.hasError('sameLocationErr')">
+            Departure and Destination should not be same.
+        </div>
+        <div class="flex">
+            <div id="depart-date">
+                <label class="label">
+                    Depart Date
+                </label>
+                <input type="date" id="departDate" class="form-control" formControlName="departDate">
+            <span class="validation-error" *ngIf="searchForm.controls['departDate'].invalid && (searchForm.controls['departDate'].dirty || searchForm.controls['departDate'].touched)">
+                This field is required
+            </span>
+            </div>
+            <div id="return-date">
+                <label class="label">
+                    Return Date
+                </label>
+                <input type="date" id="retunDate" [min]="searchForm.value.departDate" class="form-control" formControlName="returnDate">
+                <span class="validation-error" *ngIf="searchForm.controls['returnDate'].invalid && (searchForm.controls['returnDate'].dirty || searchForm.controls['returnDate'].touched)">
+                    This field is required
+                </span>
+            </div>
+        </div>
+        <div class="validation-error" *ngIf="searchForm.hasError('dateError')">
+            Return Date should be greater tham departure date.
+        </div>
+        
+        <div id="depart-date">
+            <label class="label">
+                Travelers
+            </label>
+            <input id="travelers" class="form-control"  formControlName="travelerStr" (click)="toggle()" readonly>
+            <div class="traveler-input" *ngIf="open">
+                <div class="padding-top10">
+                    <i class="material-icons font15 traveler-icon" [ngClass]="{'pointer' : this.traveler.adult > 0, 'disable' : this.traveler.adult<= 1 } " (click)="removeAdult()">remove</i> {{this.traveler.adult}} Adults
+                    <i class="material-icons font15 traveler-icon" (click)="addAdult()">add</i> 
+                </div>
+                <div>
+                    <i class="material-icons font15 traveler-icon" [ngClass]="{'pointer' : this.traveler.children > 0, 'disable' : this.traveler.children<= 0 } " (click)="removeChildren()">remove</i> {{this.traveler.children}} Children 
+                    <i class="material-icons font15 traveler-icon" (click)="addChildren()">add</i> 
+                </div>
+                <button (click)="selectTraveler()">Select</button>
+            </div>
+        </div>
+
+        <div id="return-date">
+            <label class="label">
+               Class
+            </label>
+            <select class="form-control" formControlName="class">
+                <option *ngFor="let option of classes" [ngValue]="option.value">{{option.label}}</option>
+            </select>
+        </div>
+        <button class="button" type="submit">Search Flights</button>
+    </div>
+</form>

@@ -1,0 +1,20 @@
+
+@use '../../variable.scss' as *;
+
+.nav-bar{
+    display: flex;
+    width: 100%;
+    text-align: center;
+
+    div{
+        border-bottom: 2px solid;
+        width: 33%;
+        padding: 6px 0;
+        color: $disable;
+        cursor: pointer;
+    }
+}
+
+.active{
+    color: $primary-color !important;
+}

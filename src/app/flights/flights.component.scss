@@ -1,0 +1,59 @@
+.search-form{
+    width:94%;
+    padding: 3%;
+
+    div{
+        padding-bottom:10px
+    }
+
+    .form-control{
+        border: 1px solid gray;
+        padding: 8px;
+        border-radius: 5px;
+        margin-top: -9px;
+        display: block;
+    }
+
+    .label{
+        position: relative;
+        background: white;
+        margin-left: 9px;
+        padding: 0 8px;
+        font-size: 12px;
+        color: gray;
+    }
+}
+
+.full-width{
+    width: 100%;
+}
+
+#depart-date, #return-date{
+    width: 47%;
+    display: inline-block;
+    input{
+        width: 100%;
+        padding-inline-start: 1%;
+        padding-inline-end: 1%;
+    }
+    select{
+        width: 102%
+    }
+}
+
+#depart-date{
+    margin-right: 5%;
+}
+
+.traveler-input{
+    position: absolute;
+    background: #fff;
+    box-shadow: 1px 5px 4px 1px lightgray;
+    width: 25%;
+    text-align: center;
+}
+
+.traveler-icon{
+    border: 1px solid;
+    cursor: pointer;
+}

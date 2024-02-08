@@ -1,0 +1,56 @@
+<div class="heading">
+    <div routerLink="/flights"><i class="material-icons">arrow_back</i></div>
+    <div>
+        <div class="font15 text-center">
+            {{this.formData?.departure}} <i class="material-icons font15">arrow_forward</i> {{this.formData?.destination}}
+        </div>
+        <div class="font12">
+           {{this.formData?.travelerStr}}
+        </div>
+    </div>
+    <div routerLink="/flights"><i class="material-icons">edit</i></div> 
+</div>
+
+<div class="box" *ngFor="let flight of flights">
+    <div>
+        <span class="font12">{{flight.airline}}</span>
+    </div>
+
+    <div class="time-line">
+        <div class="time"> {{flight.depatureTime | date : "HH:mm"}} <span> {{this.formData?.departure}} </span></div>
+        <div class="text-center">
+            <div class="font11">{{ getTimeDiff(flight.depatureTime, flight.returnTime) }}</div>
+            <div class="font11">1 Stop (ADD)</div>
+        </div>
+        <div class="time"> {{flight.returnTime | date : "HH:mm"}} <span>{{this.formData?.destination}}</span></div>
+    </div>
+
+    
+
+    <div class="inline-flex">
+        <div class="rates" >
+            <div>
+                ${{flight.fare.basic}}
+                <span>Basic Economy</span>
+            </div>
+        </div>
+        <div class="rates" >
+            <div>
+                ${{flight.fare.main}}
+                <span>Main Cabin</span>
+            </div>
+        </div>
+        <div class="rates" >
+            <div>
+                ${{flight.fare.business}}
+                <span>Business Class</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sort-filter-button">
+    <button routerLink="/flight-sort">Sort by</button>
+    <button routerLink="/flight-filter">Filter</button>
+</div>
+

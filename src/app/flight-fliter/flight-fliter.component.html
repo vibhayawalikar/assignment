@@ -1,0 +1,40 @@
+<div class="heading">
+    <div routerLink="/flight-results"><i class="material-icons">arrow_back</i></div>
+    <div>
+        <div class="font15 text-center">
+        Filter
+        </div>
+    </div>
+    <div></div> 
+</div>
+<form [formGroup]="filterForm">
+    <div class="box ">
+        <div class="box-label">Booking Class</div>
+        <div class="checkbox"> 
+            <input type="checkbox" formControlName="economy"> Economy
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" formControlName="businessClass"> Business Class
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-label">Price</div>
+        <div class="price-input">
+            <label class="label">
+                Minimum price
+            </label>
+            <input type="number" min="0" class="form-control"  formControlName="minimumRate">
+        </div>
+        <div class="price-input">
+            <label class="label">
+                Maximum price
+            </label>
+            <input type="number" min="0" class="form-control"  formControlName="maximumRate">
+        </div>
+    </div>
+    <div class="button-group">
+        <button id="reset" (click)="clear()">Reset All</button>
+        <button id="apply" (click)="save()">Apply</button>
+    </div>
+</form>
+

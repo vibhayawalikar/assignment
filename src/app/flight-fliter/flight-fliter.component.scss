@@ -1,0 +1,58 @@
+@use '../../variable.scss' as *;
+
+.box{
+    background: #fff;
+    box-shadow: 5px 5px 7px 3px #ddd;
+    margin-bottom: 15px;
+
+    .box-label{
+        border-bottom: 1px solid;
+        padding: 15px
+    }
+
+    .checkbox{
+        padding: 10px 15px;
+    }
+}
+
+#reset, #apply{
+    padding: 10px;
+    border-radius: 5px;
+}
+#reset{
+    background: #fff;
+    border: 1px solid black;
+}
+
+#apply{
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    margin-left: 1%;
+}
+
+.button-group{
+    padding: 15px;
+}
+
+.form-control{
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: -9px;
+    display: block;
+}
+
+.label{
+    position: relative;
+    background: white;
+    margin-left: 9px;
+    padding: 0 8px;
+    font-size: 12px;
+    color: gray;
+}
+
+.price-input{
+    display: inline-block;
+    padding: 15px;
+}
